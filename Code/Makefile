@@ -1,5 +1,5 @@
 .PHONY: run
-run : hello fizzbuzz p2_do p2_dowhile p2_if p2_nesteddo p2_selectcase
+run : hello fizzbuzz p2_do p2_dowhile p2_if p2_nesteddo p2_selectcase p2_mildlyuse
 	./hello
 	./fizzbuzz
 	./p2_do
@@ -7,8 +7,9 @@ run : hello fizzbuzz p2_do p2_dowhile p2_if p2_nesteddo p2_selectcase
 	./p2_if
 	./p2_nesteddo
 	./p2_selectcase
+	./p2_mildlyuse
 
-all : hello fizzbuzz p2_do p2_dowhile p2_if p2_nesteddo p2_selectcase
+all : hello fizzbuzz p2_do p2_dowhile p2_if p2_nesteddo p2_selectcase p2_mildlyuse
 
 hello : hello.f95
 	gfortran -o hello hello.f95
@@ -31,5 +32,8 @@ p2_nesteddo : p2_nesteddo.f95
 p2_selectcase : p2_selectcase.f95
 	gfortran -o p2_selectcase p2_selectcase.f95
 
+p2_mildlyuse : p2_mildlyuse.f95
+	gfortran -o p2_mildlyuse p2_mildlyuse.f95
+
 clean:
-	rm hello fizzbuzz p2_do p2_dowhile p2_if p2_nesteddo p2_selectcase
+	rm hello fizzbuzz p2_do p2_dowhile p2_if p2_nesteddo p2_selectcase p2_mildlyuse

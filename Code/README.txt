@@ -9,4 +9,8 @@
 \
 The first program is a simple hello world that prints \'93Hello, World!\'94\
 \
-The second program is fizzbuzz which prints the first 100 numbers. If the number is divisible by 3 we print \'93fizz\'94, if it is divisible by 5 we print \'93buzz\'94, if it is divisible by both 3 and 5 we print \'93fizzbuzz\'94.}
+The second program is fizzbuzz which prints the first 100 numbers. If the number is divisible by 3 we print \'93fizz\'94, if it is divisible by 5 we print \'93buzz\'94, if it is divisible by both 3 and 5 we print \'93fizzbuzz\'94.\
+\
+All of the p2_ prefixed programs demonstrate different control structures.\
+\
+p2_mildlyuse requires the user to enter a word. Upon receiving the word, it will display the length of the word, the number of vowels, and the number of consonants. It does extremely limited input validation (checks for spaces in the string).}
