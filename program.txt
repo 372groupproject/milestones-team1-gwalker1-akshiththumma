@@ -1,0 +1,7 @@
+For our program we are planning on implementing a calculator with some of the functionality of a scientific caculator. For an example of this, please look at a scientific calculator.
+
+We expect the program to have the basic functions that a calculator would have (functions for addition, subtraction, multiplication, etc) and some more complex ones like, perhaps, matrix operations. I (Graham) would also like to incorporate the linked list that was written for milestone 3.
+
+An extremely rough estimate of lines of code: 1,000 - 1,500
+
+We think this will be a good illustration of the features of our language as FORTRAN is heavily and mainly used in scientific calculations.
