@@ -13,4 +13,6 @@ The second program is fizzbuzz which prints the first 100 numbers. If the number
 \
 All of the p2_ prefixed programs demonstrate different control structures.\
 \
-p2_mildlyuse requires the user to enter a word. Upon receiving the word, it will display the length of the word, the number of vowels, and the number of consonants. It does extremely limited input validation (checks for spaces in the string).}
+p2_mildlyuse requires the user to enter a word. Upon receiving the word, it will display the length of the word, the number of vowels, and the number of consonants. It does extremely limited input validation (checks for spaces in the string).\
+\
+All p3_ prefixed programs demonstrate the different data types. The \'93mildly useful\'94 program is an integer linked list that performs various operations. The nodes are a derived type. The operations are insert, remove, search, and sumList.}
