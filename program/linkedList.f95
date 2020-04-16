@@ -1,30 +1,48 @@
+!begining of module
 module linkedList
         implicit none
 
+	! define the type node for the linked list
         type node
+		!contains a number and a next pointer
                 integer :: val
                 type(node), pointer :: next
         end type node
-
+! this keyword lets us describe what functions/subroutines are in the module
 contains
 
+!this function takes the head of a list and a new node to be added
+!we move to the end of the list and add the node
 subroutine insert(head, newnode)
         implicit none
+	!the new node must be specified as a target so we can point at it
         type(node), target :: newnode
         type(node) :: head
+	
+	!this is the variable we'll use to move through the list
+	!it is specified as a pointer so we can point at the nodes in the list
         type(node),pointer :: curr
+	
+	!if the list is empty. that is, if head points to nothing.
+	!the associated function returns true if a pointer has a target
+	!false otherwise
         if(.not. associated(head%next)) then
                 head%next => newnode
                 nullify(newnode%next)
                 return
         end if
-
+	
+	!point curr at the first item
         curr => head%next
+
+	!move through the list until the end
         do while(associated(curr%next))
         !       print *, curr%val
                 curr => curr%next
         end do
 
+	!add the new node to the end and make sure it is not pointing to anything
+	!using 'nullify' function
         curr%next=>newnode
         nullify(newnode%next)
 
