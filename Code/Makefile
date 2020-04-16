@@ -1,7 +1,7 @@
 .PHONY: run
 run : hello fizzbuzz p2_do p2_dowhile p2_if p2_nesteddo p2_selectcase p2_mildlyuse \
 	p3_numbers p3_charAndString p3_arrays p3_derived p3_pointersTargets \
-	p3_mildUse
+	p3_mildUse p4_subroutine p4_function p4_module p4_interface #p4_mildUse
 	
 	./hello
 	./fizzbuzz
@@ -17,9 +17,15 @@ run : hello fizzbuzz p2_do p2_dowhile p2_if p2_nesteddo p2_selectcase p2_mildlyu
 	./p3_derived
 	./p3_pointersTargets
 	./p3_mildUse
+	./p4_subroutine
+	./p4_function
+	./p4_module
+	./p4_interface
+	#./p4_mildUse
 
 all : hello fizzbuzz p2_do p2_dowhile p2_if p2_nesteddo p2_selectcase p2_mildlyuse \
-	p3_numbers p3_charAndString p3_arrays p3_derived p3_pointersTargets p3_mildUse
+	p3_numbers p3_charAndString p3_arrays p3_derived p3_pointersTargets p3_mildUse \
+	p4_subroutine p4_function p4_module p4_interface #p4_mildUse
 
 hello : hello.f95
 	gfortran -o hello hello.f95
@@ -63,6 +69,22 @@ p3_pointersTargets : p3_pointersTargets.f95
 p3_mildUse : p3_mildUse.f95
 	gfortran -o p3_mildUse p3_mildUse.f95
 
+p4_subroutine : p4_subroutine.f95
+	gfortran -o p4_subroutine p4_subroutine.f95
+
+p4_function : p4_function.f95
+	gfortran -o p4_function p4_function.f95
+
+p4_module : p4_module.f95
+	gfortran -o p4_module p4_module.f95
+
+p4_interface : p4_interface.f95
+	gfortran -o p4_interface p4_interface.f95
+
+#p4_mildUse : p4_mildUse.f95
+#	gfortran -o p4_mildUse p4_mildUse.f95
+
 clean:
 	rm hello fizzbuzz p2_do p2_dowhile p2_if p2_nesteddo p2_selectcase p2_mildlyuse \
-	   p3_numbers p3_charAndString p3_arrays p3_derived p3_pointersTargets p3_mildUse
+	   p3_numbers p3_charAndString p3_arrays p3_derived p3_pointersTargets p3_mildUse \
+	   p4_subroutine p4_function p4_module p4_interface #p4_mildUse
