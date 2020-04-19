@@ -1,0 +1,12 @@
+Video Outline FORTRAN
+-Akshith Thumma, Graham Walker
+
+I and my partner will be doing a slide presentation video for this project. We will be recording slides with some crucial information about the language and below are some specifics and an out line to the presentation. This presentation will include:
+* A slide presentation recording of all the components of the project.
+* An Introduction of the specific language we have chosen and its evolution in time.
+* A detailed explanation of the importance of the language and why it stands out.
+* A basic outline of all the datatypes and control structures supported by the language.
+* Basic examples of the Language. First example might just be a Hello World or Adding two numbers.
+* Going over some more components covered over the Paper and detailed explanation of crucial information.
+* We will also be having input and output slides of the main program and an open link to the source code will be available.
+Considering all these components for the presentation, they are subject to change as we go on to find new discoveries about the language. We as a team will try our best to present the language we chose to our very best. 
