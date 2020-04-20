@@ -5,7 +5,7 @@ module linkedList
 	! define the type node for the linked list
         type node
 		!contains a number and a next pointer
-                integer :: val
+                real :: val
                 type(node), pointer :: next
         end type node
 ! this keyword lets us describe what functions/subroutines are in the module
@@ -107,14 +107,14 @@ type(node) function search(head, searchVal)
                 end if
         end do
         print *, "value not found. returning dummy node w/ value -1"
-        search = createNode(-1)
+        search = createNode(-1.0)
         return
 
 end function search
 
-integer function sumList(head)
+real function sumList(head)
         type(node) :: head
-        integer :: sum = 0
+        real :: sum = 0
         type(node), pointer :: curr
 
         curr=>head%next
@@ -128,7 +128,7 @@ end function sumList
 
 type(node) function createNode(value)
         implicit none
-        integer, intent(in) :: value
+        real, intent(in) :: value
         type(node), target :: newNode
         newNode%val = value
         !print *, "New node val = ", newNode%val

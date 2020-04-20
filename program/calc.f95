@@ -8,10 +8,17 @@ module yungCalc
 ! the module contains the following functions
 contains
 
+! this function gets the number of numbers 
+! the user wants to perform certain operations on
+integer function 
+
 ! this function will add numbers
-integer function add()
+real function add()
 	implicit none
-	print *, "Add func"
+	type(node) :: head
+	integer :: numNum
+	numNum = getNumNum()
+	
 	add = 1
 	return
 end function add
@@ -68,7 +75,7 @@ program calc
 		! base on user operation input
 		select case (operation)
 			case("add")
-				result = add()
+				result = add(head)
 			
 			case("sub")
 				result = sub()
@@ -79,6 +86,8 @@ program calc
 			case default
 				print *, "That is not a valid choice, grasshopper. Try again."
 		end select
+		
+		! shitty way to "clear" the list (placeholder)
 		operation = getOp()
 	end do
 	
