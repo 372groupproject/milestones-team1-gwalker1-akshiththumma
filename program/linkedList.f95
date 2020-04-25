@@ -18,11 +18,11 @@ subroutine insert(head, newnode)
 	!the new node must be specified as a target so we can point at it
         type(node), target :: newnode
         type(node) :: head
-	
+ 	
 	!this is the variable we'll use to move through the list
 	!it is specified as a pointer so we can point at the nodes in the list
         type(node),pointer :: curr
-	
+	print *, newnode%val	
 	!if the list is empty. that is, if head points to nothing.
 	!the associated function returns true if a pointer has a target
 	!false otherwise
@@ -45,7 +45,7 @@ subroutine insert(head, newnode)
 	!using 'nullify' function
         curr%next=>newnode
         nullify(newnode%next)
-
+	call printList(head)
 end subroutine insert
 
 subroutine remove(head, valToRemove)
@@ -139,7 +139,7 @@ subroutine printList(head)
         implicit none
         type(node) :: head
         type(node) :: curr
-
+	print *, "in print"
         curr = head
         do while(associated(curr%next))
                 print *, curr%next%val

@@ -14,6 +14,7 @@ subroutine insert(head, newnode)
 	type(node) :: head
 	type(node),pointer :: curr
 	if(.not. associated(head%next)) then
+		print *, "should be empty"
 		head%next => newnode
 		nullify(newnode%next)
 		return
@@ -139,9 +140,11 @@ program mildUse
 	
 	type(node) :: head
 	type(node) :: foundnode
+	integer :: input
 	integer :: lsum
+	integer :: i	
 	nullify(head%next)
-	
+
 	print *, "Here are some operations on a linked list of integers."
 	print *, "The nodes are a derived type containing an int and a next pointer."
 	print*, ""	
@@ -152,6 +155,7 @@ program mildUse
 	call insert(head, createNode(4))
 	call insert(head, createNode(5))
 	call insert(head, createNode(6))
+	
 	print *, "Inserted nodes 1 through 6"
 	call printList(head)
 
