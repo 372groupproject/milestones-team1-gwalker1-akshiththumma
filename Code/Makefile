@@ -1,7 +1,8 @@
 .PHONY: run
 run : hello fizzbuzz p2_do p2_dowhile p2_if p2_nesteddo p2_selectcase p2_mildlyuse \
 	p3_numbers p3_charAndString p3_arrays p3_derived p3_pointersTargets \
-	p3_mildUse p4_subroutine p4_function p4_module p4_interface #p4_mildUse
+	p3_mildUse p4_subroutine p4_function p4_module p4_interface \
+	p5_caseInsensitive p5_parallel p5_autoDeallocate p5_arraysStuff
 	
 	./hello
 	./fizzbuzz
@@ -21,11 +22,15 @@ run : hello fizzbuzz p2_do p2_dowhile p2_if p2_nesteddo p2_selectcase p2_mildlyu
 	./p4_function
 	./p4_module
 	./p4_interface
-	#./p4_mildUse
+	./p5_caseInsensitive
+	./p5_parallel
+	./p5_autoDeallocate
+	./p5_arraysStuff
 
 all : hello fizzbuzz p2_do p2_dowhile p2_if p2_nesteddo p2_selectcase p2_mildlyuse \
 	p3_numbers p3_charAndString p3_arrays p3_derived p3_pointersTargets p3_mildUse \
-	p4_subroutine p4_function p4_module p4_interface #p4_mildUse
+	p4_subroutine p4_function p4_module p4_interface p5_caseInsensitive p5_parallel \
+        p5_autoDeallocate p5_arraysStuff
 
 hello : hello.f95
 	gfortran -o hello hello.f95
@@ -81,10 +86,20 @@ p4_module : p4_module.f95
 p4_interface : p4_interface.f95
 	gfortran -o p4_interface p4_interface.f95
 
-#p4_mildUse : p4_mildUse.f95
-#	gfortran -o p4_mildUse p4_mildUse.f95
 
+p5_caseInsensitive : p5_caseInsensitive.f95
+	gfortran -o p5_caseInsensitive p5_caseInsensitive.f95
+
+p5_autoDeallocate : p5_autoDeallocate.f95
+	gfortran -o p5_autoDeallocate p5_autoDeallocate.f95
+
+p5_arraysStuff : p5_arraysStuff.f95
+	gfortran -o p5_arraysStuff p5_arraysStuff.f95
+
+p5_parallel : p5_parallel.f95
+	gfortran -o p5_parallel -fopenmp p5_parallel.f95
 clean:
 	rm hello fizzbuzz p2_do p2_dowhile p2_if p2_nesteddo p2_selectcase p2_mildlyuse \
 	   p3_numbers p3_charAndString p3_arrays p3_derived p3_pointersTargets p3_mildUse \
-	   p4_subroutine p4_function p4_module p4_interface #p4_mildUse
+	   p4_subroutine p4_function p4_module p4_interface p5_caseInsensitive p5_autoDeallocate \
+           p5_parallel p5_arraysStuff
